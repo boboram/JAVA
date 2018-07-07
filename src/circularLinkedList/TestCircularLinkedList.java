@@ -7,7 +7,7 @@ public class TestCircularLinkedList {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Node currentNode = null;
-		Node newNode = null;
+		Node newNode = null; 
 		
 		CircularLinkedList nodes = new CircularLinkedList();
 		

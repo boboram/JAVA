@@ -133,7 +133,7 @@ public class CircularLinkedList  {
            headNode = removeNode.nextNode; //헤드노드는 지우고자 하는 노드의 다음 노드를 바라보도록 한다.
            
            removeNode.prevNode = null;
-           removeNode.nextNode = null;
+           removeNode.nextNode = null; 
        } else {
            //지우려하는 노드의 이전, 다음 노드가 있기 때문에 반복문으로 전단계 노드를 찾지 않아도 됩니다.!
            if(removeNode.prevNode!=null) {
