@@ -16,7 +16,7 @@ public class arrayStack {
    /**
     * 스택 생성 
     **/
-   public ArrayStack createStact(ArrayStack stack, int capacity) {
+   public ArrayStack createStack(ArrayStack stack, int capacity) {
       stack = new ArrayStack(); //스택 메모리 생성
       stack.Nodes = new Node[capacity]; //capacity만큼의 노드 메모리 설정
       stack.capacity = capacity; //입력된 capacity로 스택 용량 설정

@@ -9,7 +9,7 @@ public class test_arrayStack {
       
       /*스택 생성*/
       System.out.println("create stack..\n");
-      stack = as.createStact(stack, 10); //10개의 데이터를 담을 스택 생성
+      stack = as.createStack(stack, 10); //10개의 데이터를 담을 스택 생성
       
       /*데이터 삽입*/
       System.out.println("push data...\n");
