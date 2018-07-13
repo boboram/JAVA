@@ -5,71 +5,71 @@ public class linkedListStack {
 	
 	public class Node {	
 	    String data;
-        Node nextNode = null; //´ÙÀ½ ³ëµå
+        Node nextNode = null; //ë‹¤ìŒ ë…¸ë“œ
     }
 	
 	public class LinkedListStack {
-		//int capacity; //½ºÅÃ ¿ë·® ==> ¹è¿­ÀÌ ¾Æ´Ï±â ¶§¹®¿¡ ÇÊ¿ä¾øÀ½
-	    //int top; //³ëµå ¹è¿­ ÃÖ»óÀ§ ÀÎµ¦½º
+		//int capacity; //ìŠ¤íƒ ìš©ëŸ‰ ==> ë°°ì—´ì´ ì•„ë‹ˆê¸° ë•Œë¬¸ì— í•„ìš”ì—†ìŒ
+	    //int top; //ë…¸ë“œ ë°°ì—´ ìµœìƒìœ„ ì¸ë±ìŠ¤
 	    Node headNode;
         Node topNode;
     }
    
     /**
-      * ½ºÅÃ »ı¼º 
+      * ìŠ¤íƒ ìƒì„± 
      **/
 	public LinkedListStack createStack(LinkedListStack stack) {
-		stack = new LinkedListStack(); //½ºÅÃ ¸Ş¸ğ¸® »ı¼º
+		stack = new LinkedListStack(); //ìŠ¤íƒ ë©”ëª¨ë¦¬ ìƒì„±
         stack.headNode = null;
         stack.topNode = null;
         return stack;
     }
    
     /**
-      * ³ëµå »ı¼º
+      * ë…¸ë“œ ìƒì„±
       * @param newData 
      **/
 	public Node createNode(String newData) {
 		Node newNode = new Node();
         newNode.data = newData;
-        newNode.nextNode = null; //´ÙÀ½ ³ëµå ÃÊ±âÈ­ 
+        newNode.nextNode = null; //ë‹¤ìŒ ë…¸ë“œ ì´ˆê¸°í™” 
         
         return newNode;
     }
    
     /**
-      * ½ºÅÃ µ¥ÀÌÅÍ ÀúÀå
+      * ìŠ¤íƒ ë°ì´í„° ì €ì¥
      **/
 	public void Push(LinkedListStack stack, Node newNode) {
-		if(stack.headNode == null) { //Ã¹ ³ëµå¶ó¸é Çìµå³ëµå´Â newNode´Ù.
+		if(stack.headNode == null) { //ì²« ë…¸ë“œë¼ë©´ í—¤ë“œë…¸ë“œëŠ” newNodeë‹¤.
 			stack.headNode = newNode;
 		}else {
-			stack.topNode.nextNode = newNode; //½ºÅÃÀÇ ÃÖ»ó´Ü ³ëµåÀÇ ´ÙÀ½³ëµåµµ newNode
+			stack.topNode.nextNode = newNode; //ìŠ¤íƒì˜ ìµœìƒë‹¨ ë…¸ë“œì˜ ë‹¤ìŒë…¸ë“œë„ newNode
         }
 		
-		stack.topNode = newNode; //½ºÅÃÀÇ ÃÖ»ó´Ü ³ëµå´Â newNode°¡ µÈ´Ù.
+		stack.topNode = newNode; //ìŠ¤íƒì˜ ìµœìƒë‹¨ ë…¸ë“œëŠ” newNodeê°€ ëœë‹¤.
 		
 	}
 	
 	/**
-	  * °¡Àå ÃÖ±Ù¿¡ ³ÖÀº µ¥ÀÌÅÍºÎÅÍ ¹İÈ¯(LIFO)
+	  * ê°€ì¥ ìµœê·¼ì— ë„£ì€ ë°ì´í„°ë¶€í„° ë°˜í™˜(LIFO)
 	 **/
 	public Node Pop(LinkedListStack stack) {
-		//°¡Àå ÃÖ±Ù¿¡ µé¾î¿Â ³ëµå°¡ ¹İÈ¯µÈ´Ù.  
+		//ê°€ì¥ ìµœê·¼ì— ë“¤ì–´ì˜¨ ë…¸ë“œê°€ ë°˜í™˜ëœë‹¤.  
 		Node currentNode = stack.headNode;
 		Node oldTopNode = stack.topNode;
 		
-		if(currentNode == oldTopNode) { //Çìµå³ëµå¿Í ÃÖ»ó´Ü ³ëµå°¡ °°´Ù¸é
+		if(currentNode == oldTopNode) { //í—¤ë“œë…¸ë“œì™€ ìµœìƒë‹¨ ë…¸ë“œê°€ ê°™ë‹¤ë©´
 			stack.headNode = null;
 			stack.topNode = null;
 			return oldTopNode;
 		}
 		
-		while(currentNode.nextNode != oldTopNode) { //¹İÈ¯ÇÒ ³ëµåÀÇ Àü ³ëµå¸¦ Ã£´Â´Ù.
+		while(currentNode.nextNode != oldTopNode) { //ë°˜í™˜í•  ë…¸ë“œì˜ ì „ ë…¸ë“œë¥¼ ì°¾ëŠ”ë‹¤.
 			currentNode = currentNode.nextNode;
 		}
 		
-		stack.topNode = currentNode; //½ºÅÃÀÇ ÃÖ»ó´Ü ³ëµå´Â ¹İÈ¯µÇ´Â ³ëµåÀÇ Àü³ëµå°¡ µÈ´Ù.
+		stack.topNode = currentNode; //ìŠ¤íƒì˜ ìµœìƒë‹¨ ë…¸ë“œëŠ” ë°˜í™˜ë˜ëŠ” ë…¸ë“œì˜ ì „ë…¸ë“œê°€ ëœë‹¤.
 		currentNode.nextNode = null;
 		
 		return oldTopNode;
@@ -77,7 +77,7 @@ public class linkedListStack {
 	}
 	
 	/**
-      * ½ºÅÃ ¸Ş¸ğ¸® °¹¼ö ¹İÈ¯ 
+      * ìŠ¤íƒ ë©”ëª¨ë¦¬ ê°¯ìˆ˜ ë°˜í™˜ 
      **/
 	public int getSize(LinkedListStack stack) {
 		int count = 0;
@@ -86,7 +86,7 @@ public class linkedListStack {
 		
 		while(currentNode != null) { 
 			count++;
-			currentNode = currentNode.nextNode; //´ÙÀ½ ³ëµå·Î ÀÌµ¿	
+			currentNode = currentNode.nextNode; //ë‹¤ìŒ ë…¸ë“œë¡œ ì´ë™	
 		}
 		
 		return count;
@@ -94,14 +94,14 @@ public class linkedListStack {
 	}
    
    /**
-     * ½ºÅÃ ºñ¾îÁ®ÀÖ´ÂÁö ¿©ºÎ ¹İÈ¯ 
+     * ìŠ¤íƒ ë¹„ì–´ì ¸ìˆëŠ”ì§€ ì—¬ë¶€ ë°˜í™˜ 
     **/
    public boolean isEmpty(LinkedListStack stack) {
       return stack.headNode == null;
    }
    
    /**
-     * ½ºÅÃ »óÅÂ Ãâ·Â 
+     * ìŠ¤íƒ ìƒíƒœ ì¶œë ¥ 
     **/
    public void printStackStatus(LinkedListStack stack) {
       System.out.println("print stack status...\n");

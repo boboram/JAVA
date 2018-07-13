@@ -2,32 +2,32 @@ package doubleLinkedList;
 
 /**
  * @author boram
- * ´õºí¿¬°á¸®½ºÆ® ±¸ÇöÇÏ±â(ÀÚ·á±¸Á¶)
+ * ë”ë¸”ì—°ê²°ë¦¬ìŠ¤íŠ¸ êµ¬í˜„í•˜ê¸°(ìë£Œêµ¬ì¡°)
  **/
 public class DoubleLinkedList  {
    
-   public Node headNode; //Çìµå ³ëµå
+   public Node headNode; //í—¤ë“œ ë…¸ë“œ
    
-   public class Node{ //CÀÇ ±¸Á¶Ã¼ ´ë½Å¿¡ Å¬·¡½º »ç¿ë
-      public int data; //ÀÔ·Â µ¥ÀÌÅÍ
-      public Node prevNode; //ÀÌÀü ¿¬°á ³ëµå
-      public Node nextNode; //´ÙÀ½ ¿¬°áµÉ ³ëµå
+   public class Node{ //Cì˜ êµ¬ì¡°ì²´ ëŒ€ì‹ ì— í´ë˜ìŠ¤ ì‚¬ìš©
+      public int data; //ì…ë ¥ ë°ì´í„°
+      public Node prevNode; //ì´ì „ ì—°ê²° ë…¸ë“œ
+      public Node nextNode; //ë‹¤ìŒ ì—°ê²°ë  ë…¸ë“œ
       
-      Node(int data){ //³ëµå µ¥ÀÌÅÍ´Â ³ëµå °´Ã¼ »ı¼º½Ã °°ÀÌ ³Ö¾îÁÖµµ·Ï ÇÑ´Ù.
+      Node(int data){ //ë…¸ë“œ ë°ì´í„°ëŠ” ë…¸ë“œ ê°ì²´ ìƒì„±ì‹œ ê°™ì´ ë„£ì–´ì£¼ë„ë¡ í•œë‹¤.
          this.data = data;
       }
       
    }
    
    /**
-    * ³ëµå »ı¼º(Ã³À½)
+    * ë…¸ë“œ ìƒì„±(ì²˜ìŒ)
     * @param newData
     * */
    public Node createNode(int newData) {
-      Node newNode = new Node(newData); //»õ·Î¿î ³ëµå »ı¼ºÈÄ µ¥ÀÌÅÍ ³Ö±â
+      Node newNode = new Node(newData); //ìƒˆë¡œìš´ ë…¸ë“œ ìƒì„±í›„ ë°ì´í„° ë„£ê¸°
       
-      newNode.prevNode = null; //ÀÌÀü ¿¬°á ³ëµå null·Î ÃÊ±âÈ­
-      newNode.nextNode = null; //´ÙÀ½ ¿¬°á ³ëµå´Â null·Î ÃÊ±âÈ­
+      newNode.prevNode = null; //ì´ì „ ì—°ê²° ë…¸ë“œ nullë¡œ ì´ˆê¸°í™”
+      newNode.nextNode = null; //ë‹¤ìŒ ì—°ê²° ë…¸ë“œëŠ” nullë¡œ ì´ˆê¸°í™”
       
       return newNode;
       
@@ -35,38 +35,38 @@ public class DoubleLinkedList  {
    
    
    /**
-    * ³ëµå Ãß°¡
+    * ë…¸ë“œ ì¶”ê°€
     * */
    public void appendNode(Node newNode) {
-      if(headNode == null) { //Çìµå ³ëµå°¡ ºñ¾îÁ® ÀÖ´Â°æ¿ì
+      if(headNode == null) { //í—¤ë“œ ë…¸ë“œê°€ ë¹„ì–´ì ¸ ìˆëŠ”ê²½ìš°
          headNode = newNode;
       }else {
-         Node beforeNode = getNodeAt(getNodeCount()-1); //ÀÌÀü¿¡ »ı¼ºµÈ ³ëµå¸¦ °¡Á®¿Â´Ù
+         Node beforeNode = getNodeAt(getNodeCount()-1); //ì´ì „ì— ìƒì„±ëœ ë…¸ë“œë¥¼ ê°€ì ¸ì˜¨ë‹¤
          
-         beforeNode.nextNode = newNode; //ÀÌÀü ³ëµåÀÇ ¿¬°á¸µÅ©¸¦ »õ ³ëµå·Î ÇØÁØ´Ù.
+         beforeNode.nextNode = newNode; //ì´ì „ ë…¸ë“œì˜ ì—°ê²°ë§í¬ë¥¼ ìƒˆ ë…¸ë“œë¡œ í•´ì¤€ë‹¤.
          newNode.prevNode = beforeNode;
       }
       
    }
    
    /**
-    * Æ¯Á¤ ³ëµåÀÇ ´ÙÀ½ ³ëµå Ãß°¡
+    * íŠ¹ì • ë…¸ë“œì˜ ë‹¤ìŒ ë…¸ë“œ ì¶”ê°€
     * */
    public void insertAfter(Node currentNode, Node newNode) {
      /*
-      headNode <-> currentNode <-> tailNode ¼øÀ¸·Î ³ëµå°¡ Á¸ÀçÇß´Ù°í °¡Á¤ÇÏ¸é
-      ÇöÀç newNode´Â currentNode ÀÌÈÄ¿¡ Ãß°¡µÇ¾ßÇÏ¹Ç·Î ¾Æ·¡¿Í °°´Ù
+      headNode <-> currentNode <-> tailNode ìˆœìœ¼ë¡œ ë…¸ë“œê°€ ì¡´ì¬í–ˆë‹¤ê³  ê°€ì •í•˜ë©´
+      í˜„ì¬ newNodeëŠ” currentNode ì´í›„ì— ì¶”ê°€ë˜ì•¼í•˜ë¯€ë¡œ ì•„ë˜ì™€ ê°™ë‹¤
       headNode <-> currentNode <-> newNode <-> tailNode
-      µû¶ó¼­ newNodeÀÇ ÀÌÀü ³ëµå´Â currentNode°¡ µÇ°í ´ÙÀ½ ³ëµå´Â tailNode°¡ µÇ°í
-      currentNodeÀÇ ´ÙÀ½ ³ëµåÀÎ tailNodeÀÇ ÀÌÀü ³ëµå´Â newNode¸¦ ¹Ù¶óº¸°í
-      currentNodeÀÇ ´ÙÀ½ ³ëµå´Â newNode¸¦ ¹Ù¶óº»´Ù
+      ë”°ë¼ì„œ newNodeì˜ ì´ì „ ë…¸ë“œëŠ” currentNodeê°€ ë˜ê³  ë‹¤ìŒ ë…¸ë“œëŠ” tailNodeê°€ ë˜ê³ 
+      currentNodeì˜ ë‹¤ìŒ ë…¸ë“œì¸ tailNodeì˜ ì´ì „ ë…¸ë“œëŠ” newNodeë¥¼ ë°”ë¼ë³´ê³ 
+      currentNodeì˜ ë‹¤ìŒ ë…¸ë“œëŠ” newNodeë¥¼ ë°”ë¼ë³¸ë‹¤
      */
       
       newNode.prevNode = currentNode;
       newNode.nextNode = currentNode.nextNode;
       
-      if(currentNode.nextNode != null) { //Æ¯Á¤³ëµåÀÇ ´ÙÀ½ ¿¬°á ³ëµå°¡ ÀÖ´Â °æ¿ì
-         currentNode.nextNode.prevNode = newNode; //Æ¯Á¤³ëµåÀÇ ´ÙÀ½ ¿¬°á³ëµåÀÇ ÀÌÀü³ëµå¸¦ »õ·Î¿î³ëµå·Î ¹Ù²Û´Ù.
+      if(currentNode.nextNode != null) { //íŠ¹ì •ë…¸ë“œì˜ ë‹¤ìŒ ì—°ê²° ë…¸ë“œê°€ ìˆëŠ” ê²½ìš°
+         currentNode.nextNode.prevNode = newNode; //íŠ¹ì •ë…¸ë“œì˜ ë‹¤ìŒ ì—°ê²°ë…¸ë“œì˜ ì´ì „ë…¸ë“œë¥¼ ìƒˆë¡œìš´ë…¸ë“œë¡œ ë°”ê¾¼ë‹¤.
       }
       
       currentNode.nextNode = newNode;
@@ -74,44 +74,44 @@ public class DoubleLinkedList  {
    }
    
    /**
-    * Çìµå ³ëµå Ãß°¡
+    * í—¤ë“œ ë…¸ë“œ ì¶”ê°€
     * @param newHeadNode
     * */
    public void insertNewHead(Node newHeadNode) {
-      if(headNode == null) { //head³ëµå°¡ ¾ø´Â °æ¿ì »õ·Î »ı¼º
+      if(headNode == null) { //headë…¸ë“œê°€ ì—†ëŠ” ê²½ìš° ìƒˆë¡œ ìƒì„±
          headNode = newHeadNode;
       }else {
          /*
-          headNode -> Node -> tailNode¼øÀ¸·Î ³ëµå°¡ Á¸ÀçÇß´Ù°í °¡Á¤ÇÏ¸é
-          newHeadNode -> headNode -> Node -> tailNode°¡ µÇ¾ß ÇÔ
+          headNode -> Node -> tailNodeìˆœìœ¼ë¡œ ë…¸ë“œê°€ ì¡´ì¬í–ˆë‹¤ê³  ê°€ì •í•˜ë©´
+          newHeadNode -> headNode -> Node -> tailNodeê°€ ë˜ì•¼ í•¨
          */
                   
-         newHeadNode.nextNode = headNode; //newHeadNodeÀÇ ´ÙÀ½ ³ëµå´Â headNode°¡ µÇ°í
-         //head¶ó´Â °ªÀº ÀÌ¹Ì µÚ¿¡ ³ëµåµéÀ» ¿¬°áÇÑ »óÅÂÀÓ
+         newHeadNode.nextNode = headNode; //newHeadNodeì˜ ë‹¤ìŒ ë…¸ë“œëŠ” headNodeê°€ ë˜ê³ 
+         //headë¼ëŠ” ê°’ì€ ì´ë¯¸ ë’¤ì— ë…¸ë“œë“¤ì„ ì—°ê²°í•œ ìƒíƒœì„
          
-         headNode = newHeadNode; //±âÁ¸ headNode´Â ´õÀÌ»ó Çìµå ³ëµå°¡ ¾Æ´Ï¹Ç·Î Çìµå ³ëµå¸¦ newHeadNode·Î ¼öÁ¤ÇÑ´Ù
+         headNode = newHeadNode; //ê¸°ì¡´ headNodeëŠ” ë”ì´ìƒ í—¤ë“œ ë…¸ë“œê°€ ì•„ë‹ˆë¯€ë¡œ í—¤ë“œ ë…¸ë“œë¥¼ newHeadNodeë¡œ ìˆ˜ì •í•œë‹¤
          headNode.nextNode.prevNode = headNode;
       }
       
    }
    
    /**
-    * Æ¯Á¤ À§Ä¡ÀÇ ³ëµå Ã£±â
+    * íŠ¹ì • ìœ„ì¹˜ì˜ ë…¸ë“œ ì°¾ê¸°
     * @param index
     * */
    public Node getNodeAt(int index) {     
       Node x = headNode;
       
-      for(int i=0; i<index; i++) { //Ã£°íÀÚ ÇÏ´Â NodeÀÇ ¼ø¼­±îÁö ¿¬°á³ëµå¸¦ °¡Á®¿Â´Ù. head->node(1)->--->node(index)~~~
+      for(int i=0; i<index; i++) { //ì°¾ê³ ì í•˜ëŠ” Nodeì˜ ìˆœì„œê¹Œì§€ ì—°ê²°ë…¸ë“œë¥¼ ê°€ì ¸ì˜¨ë‹¤. head->node(1)->--->node(index)~~~
          x = x.nextNode;
       }
       
-      return x; //Ã£°íÀÚ ÇÑ ³ëµå ¸®ÅÏ
+      return x; //ì°¾ê³ ì í•œ ë…¸ë“œ ë¦¬í„´
       
    }
    
    /**
-    * ³ëµå °¹¼ö ¾ò±â
+    * ë…¸ë“œ ê°¯ìˆ˜ ì–»ê¸°
     * */
    public int getNodeCount() { 
 	  int count = 0;
@@ -128,13 +128,13 @@ public class DoubleLinkedList  {
    }
    
    /**
-    * ³ëµå Á¦°Å
+    * ë…¸ë“œ ì œê±°
     * @param removeNode
     * */
    public void removeNode(Node removeNode) {
       
-       if(headNode == removeNode) { //Áö¿ì°íÀÚ ÇÏ´Â ³ëµå°¡ Çìµå³ëµå¶ó¸é
-           headNode = removeNode.nextNode; //Çìµå³ëµå´Â Áö¿ì°íÀÚ ÇÏ´Â ³ëµåÀÇ ´ÙÀ½ ³ëµå¸¦ ¹Ù¶óº¸µµ·Ï ÇÑ´Ù.
+       if(headNode == removeNode) { //ì§€ìš°ê³ ì í•˜ëŠ” ë…¸ë“œê°€ í—¤ë“œë…¸ë“œë¼ë©´
+           headNode = removeNode.nextNode; //í—¤ë“œë…¸ë“œëŠ” ì§€ìš°ê³ ì í•˜ëŠ” ë…¸ë“œì˜ ë‹¤ìŒ ë…¸ë“œë¥¼ ë°”ë¼ë³´ë„ë¡ í•œë‹¤.
            
            if(headNode != null && headNode.prevNode != null) { 
               headNode.prevNode = null;
@@ -143,7 +143,7 @@ public class DoubleLinkedList  {
            removeNode.prevNode = null;
            removeNode.prevNode = null;
        } else {
-           //Áö¿ì·ÁÇÏ´Â ³ëµåÀÇ ÀÌÀü, ´ÙÀ½ ³ëµå°¡ ÀÖ±â ¶§¹®¿¡ ¹İº¹¹®À¸·Î Àü´Ü°è ³ëµå¸¦ Ã£Áö ¾Ê¾Æµµ µË´Ï´Ù.!
+           //ì§€ìš°ë ¤í•˜ëŠ” ë…¸ë“œì˜ ì´ì „, ë‹¤ìŒ ë…¸ë“œê°€ ìˆê¸° ë•Œë¬¸ì— ë°˜ë³µë¬¸ìœ¼ë¡œ ì „ë‹¨ê³„ ë…¸ë“œë¥¼ ì°¾ì§€ ì•Šì•„ë„ ë©ë‹ˆë‹¤.!
            if(removeNode.prevNode!=null) {
               removeNode.prevNode.nextNode = removeNode.nextNode;
            }
@@ -157,7 +157,7 @@ public class DoubleLinkedList  {
    }
    
    /**
-    * ´ÜÀÏ ³ëµå Ãâ·Â
+    * ë‹¨ì¼ ë…¸ë“œ ì¶œë ¥
     * @param node
     * */
    public void printNodeOne(Node node) {
@@ -165,14 +165,14 @@ public class DoubleLinkedList  {
    }
    
    /**
-    * ÀüÃ¼ ³ëµå Ãâ·Â
+    * ì „ì²´ ë…¸ë“œ ì¶œë ¥
     * */
    public void printfNodeList() {
       Node currentNode = null;
-      int count = getNodeCount(); //list¿¡ ´ã±ä ³ëµå °³¼ö
+      int count = getNodeCount(); //listì— ë‹´ê¸´ ë…¸ë“œ ê°œìˆ˜
    
       for (int i = 0; i < count; i++) {
-         currentNode = getNodeAt(i); //i¹øÂ°¿¡ À§Ä¡ÇÑ ³ëµå¸¦ °¡Á®¿Â´Ù
+         currentNode = getNodeAt(i); //ië²ˆì§¸ì— ìœ„ì¹˜í•œ ë…¸ë“œë¥¼ ê°€ì ¸ì˜¨ë‹¤
          System.out.println("list["+i+"] : " + currentNode.data);
       }
    }

@@ -11,60 +11,60 @@ public class TestCircularLinkedList {
 		
 		CircularLinkedList nodes = new CircularLinkedList();
 		
-		//³ëµå 5°³ Ãß°¡
+		//ë…¸ë“œ 5ê°œ ì¶”ê°€
 		for (int i = 0; i < 5; i++) {
-			newNode = nodes.createNode(i); //i°ªÀ» °®´Â »õ·Î¿î ³ëµå¸¦ »ı¼º
-			nodes.appendNode(newNode); //»ı¼ºµÈ ³ëµå¸¦ list¿¡ Ãß°¡
+			newNode = nodes.createNode(i); //iê°’ì„ ê°–ëŠ” ìƒˆë¡œìš´ ë…¸ë“œë¥¼ ìƒì„±
+			nodes.appendNode(newNode); //ìƒì„±ëœ ë…¸ë“œë¥¼ listì— ì¶”ê°€
 		}
 
-		//¸®½ºÆ® Ãâ·Â
+		//ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 		nodes.printfNodeList();
 
-		//¸®½ºÆ® ¼¼¹øÂ° ³ëµå¿¡ »õ·Î¿î ³ëµå¸¦ »ğÀÔ
+		//ë¦¬ìŠ¤íŠ¸ ì„¸ë²ˆì§¸ ë…¸ë“œì— ìƒˆë¡œìš´ ë…¸ë“œë¥¼ ì‚½ì…
 		System.out.println("\ninsert newNode after third node...\n");
-		currentNode = nodes.getNodeAt(2); //¼¼¹øÂ°¿¡ ÀÖ´Â ³ëµå ¹İÈ¯
-		newNode = nodes.createNode(3000); //3000°ªÀ» °®´Â »õ·Î¿î ³ëµå¸¦ »ı¼º
-		nodes.insertAfter(currentNode, newNode); //¼¼¹øÂ° ³ëµå µÚ¿¡ newNode¸¦ »ğÀÔ
+		currentNode = nodes.getNodeAt(2); //ì„¸ë²ˆì§¸ì— ìˆëŠ” ë…¸ë“œ ë°˜í™˜
+		newNode = nodes.createNode(3000); //3000ê°’ì„ ê°–ëŠ” ìƒˆë¡œìš´ ë…¸ë“œë¥¼ ìƒì„±
+		nodes.insertAfter(currentNode, newNode); //ì„¸ë²ˆì§¸ ë…¸ë“œ ë’¤ì— newNodeë¥¼ ì‚½ì…
 		
-		//¸®½ºÆ® Ãâ·Â
+		//ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 		nodes.printfNodeList();
 		
-		//³ëµå ¸®½ºÆ®ÀÇ ±æÀÌº¸´Ù 2¹è¸¸Å­ ·çÇÁ¸¦ µ¹¸ç È¯Çü ¸µÅ©Æ® ¸®½ºÆ®ÀÓÀ» È®ÀÎ
+		//ë…¸ë“œ ë¦¬ìŠ¤íŠ¸ì˜ ê¸¸ì´ë³´ë‹¤ 2ë°°ë§Œí¼ ë£¨í”„ë¥¼ ëŒë©° í™˜í˜• ë§í¬íŠ¸ ë¦¬ìŠ¤íŠ¸ì„ì„ í™•ì¸
 		System.out.println("double print..\n\n");
 
 		for (int i = 0; i < nodes.getNodeCount() * 2; i++)
 		{
-			currentNode = nodes.getNodeAt(i); //list¿¡ ´ã±ä ³ëµåÁß i¹øÂ°¿¡ À§Ä¡ÇÑ ³ëµå¸¦ °¡Á®¿Â´Ù
+			currentNode = nodes.getNodeAt(i); //listì— ë‹´ê¸´ ë…¸ë“œì¤‘ ië²ˆì§¸ì— ìœ„ì¹˜í•œ ë…¸ë“œë¥¼ ê°€ì ¸ì˜¨ë‹¤
 			System.out.println("list[" + i + "] : " +  currentNode.data);
 		}
 		
-		//¸®½ºÆ® Ã¹¹øÂ° ³ëµå¸¦ Á¦°Å
+		//ë¦¬ìŠ¤íŠ¸ ì²«ë²ˆì§¸ ë…¸ë“œë¥¼ ì œê±°
 		System.out.println("\nafter remove first node...\n");
 		currentNode = nodes.getNodeAt(0);
 		System.out.println(currentNode.data);
 		nodes.removeNode(currentNode);
 		
 		
-		//¸®½ºÆ® µÎ¹øÂ° ³ëµå¸¦ Á¦°Å
+		//ë¦¬ìŠ¤íŠ¸ ë‘ë²ˆì§¸ ë…¸ë“œë¥¼ ì œê±°
 		System.out.println("\nafter remove second node...\n");
 		currentNode = nodes.getNodeAt(1);
 		nodes.removeNode(currentNode);
 		
-		//¸®½ºÆ® Ãâ·Â
+		//ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 		nodes.printfNodeList();
 
-		//¸ğµç ³ëµå Á¦°Å
+		//ëª¨ë“  ë…¸ë“œ ì œê±°
 		System.out.println("\ndestroy all nodes..");
 		
-		int count = nodes.getNodeCount(); //list¿¡ ´ã±ä ³ëµå °³¼ö
+		int count = nodes.getNodeCount(); //listì— ë‹´ê¸´ ë…¸ë“œ ê°œìˆ˜
 		
 		currentNode = nodes.getNodeAt(0);
 		Node nextNode = null;
 		for (int i = 0; i < count; i++) {
 			nextNode = currentNode.nextNode;
 			if (currentNode != null) {
-				nodes.removeNode(currentNode); //list¿¡¼­ »èÁ¦
-//						destoryNode(currentNode); //ÇØ´ç ³ëµå ¸Ş¸ğ¸® ÇØÁ¦ ==> gc°¡ ÀÖÀ¸´Ï »ı·«!
+				nodes.removeNode(currentNode); //listì—ì„œ ì‚­ì œ
+//						destoryNode(currentNode); //í•´ë‹¹ ë…¸ë“œ ë©”ëª¨ë¦¬ í•´ì œ ==> gcê°€ ìˆìœ¼ë‹ˆ ìƒëµ!
 			}
 			currentNode = nextNode;
 		}

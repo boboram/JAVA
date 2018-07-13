@@ -10,41 +10,41 @@ public class test_linkedListStack {
 		LinkedListStack stack = null;
 		Node newNode = null;
 
-		/*½ºÅÃ »ı¼º*/
+		/*ìŠ¤íƒ ìƒì„±*/
 		System.out.println("create stack...\n");
 		stack = lls.createStack(stack);
 
-		/*½ºÅÃ »óÅÂ Ãâ·Â*/
+		/*ìŠ¤íƒ ìƒíƒœ ì¶œë ¥*/
 		lls.printStackStatus(stack);
 
-		/*µ¥ÀÌÅÍ 1°³ »ğÀÔ*/
+		/*ë°ì´í„° 1ê°œ ì‚½ì…*/
 		System.out.println("\npush data...\n");
 		newNode = lls.createNode("first");
 		lls.Push(stack, newNode);
 
-		/*½ºÅÃ »óÅÂ Ãâ·Â*/
+		/*ìŠ¤íƒ ìƒíƒœ ì¶œë ¥*/
 		lls.printStackStatus(stack);
 
-		/*µ¥ÀÌÅÍ 1°³ »ğÀÔ*/
+		/*ë°ì´í„° 1ê°œ ì‚½ì…*/
 		System.out.println("\npush data...\n");
 		newNode = lls.createNode("second");
 		lls.Push(stack, newNode);
 
-		/*½ºÅÃ »óÅÂ Ãâ·Â*/
+		/*ìŠ¤íƒ ìƒíƒœ ì¶œë ¥*/
 		lls.printStackStatus(stack);
 
-		/*µ¥ÀÌÅÍ 1°³ ¹İÈ¯*/
+		/*ë°ì´í„° 1ê°œ ë°˜í™˜*/
 		System.out.println("\npop data...\n");
 		System.out.println("pop data : " + lls.Pop(stack).data);
 
-		/*½ºÅÃ »óÅÂ Ãâ·Â*/
+		/*ìŠ¤íƒ ìƒíƒœ ì¶œë ¥*/
 		lls.printStackStatus(stack);
 
-		/*µ¥ÀÌÅÍ 1°³ ¹İÈ¯*/
+		/*ë°ì´í„° 1ê°œ ë°˜í™˜*/
 		System.out.println("\npop data...\n");
 		System.out.println("pop data : " + lls.Pop(stack).data);
 
-		/*½ºÅÃ »óÅÂ Ãâ·Â*/
+		/*ìŠ¤íƒ ìƒíƒœ ì¶œë ¥*/
 		lls.printStackStatus(stack);
 	}
 

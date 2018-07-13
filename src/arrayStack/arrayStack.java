@@ -8,25 +8,25 @@ public class arrayStack {
    }
    
    public class ArrayStack {
-      int capacity; //½ºÅÃ ¿ë·®
-      int top; //³ëµå ¹è¿­ ÃÖ»óÀ§ ÀÎµ¦½º
-      Node Nodes[]; //³ëµå ¹è¿­
+      int capacity; //ìŠ¤íƒ ìš©ëŸ‰
+      int top; //ë…¸ë“œ ë°°ì—´ ìµœìƒìœ„ ì¸ë±ìŠ¤
+      Node Nodes[]; //ë…¸ë“œ ë°°ì—´
    }
    
    /**
-    * ½ºÅÃ »ı¼º 
+    * ìŠ¤íƒ ìƒì„± 
     **/
    public ArrayStack createStack(ArrayStack stack, int capacity) {
-      stack = new ArrayStack(); //½ºÅÃ ¸Ş¸ğ¸® »ı¼º
-      stack.Nodes = new Node[capacity]; //capacity¸¸Å­ÀÇ ³ëµå ¸Ş¸ğ¸® ¼³Á¤
-      stack.capacity = capacity; //ÀÔ·ÂµÈ capacity·Î ½ºÅÃ ¿ë·® ¼³Á¤
-      stack.top = 0; //top ÃÊ±âÈ­
+      stack = new ArrayStack(); //ìŠ¤íƒ ë©”ëª¨ë¦¬ ìƒì„±
+      stack.Nodes = new Node[capacity]; //capacityë§Œí¼ì˜ ë…¸ë“œ ë©”ëª¨ë¦¬ ì„¤ì •
+      stack.capacity = capacity; //ì…ë ¥ëœ capacityë¡œ ìŠ¤íƒ ìš©ëŸ‰ ì„¤ì •
+      stack.top = 0; //top ì´ˆê¸°í™”
       
       return stack;
    }
    
    /**
-    * ½ºÅÃ µ¥ÀÌÅÍ ÀúÀå
+    * ìŠ¤íƒ ë°ì´í„° ì €ì¥
     **/
    public void Push(ArrayStack stack, int data) {
       stack.Nodes[stack.top] = new Node();
@@ -34,28 +34,28 @@ public class arrayStack {
    }
    
    /**
-     * ½ºÅÃ data ¹İÈ¯ 
+     * ìŠ¤íƒ data ë°˜í™˜ 
     **/
    public int Pop(ArrayStack stack) {
       return stack.Nodes[--stack.top].data;
    }
    
    /**
-     * ½ºÅÃ ¸Ş¸ğ¸® °¹¼ö ¹İÈ¯ 
+     * ìŠ¤íƒ ë©”ëª¨ë¦¬ ê°¯ìˆ˜ ë°˜í™˜ 
     **/
    public int getSize(ArrayStack stack) {
       return stack.top;
    }
    
    /**
-     * ½ºÅÃ ºñ¾îÁ®ÀÖ´ÂÁö ¿©ºÎ ¹İÈ¯ 
+     * ìŠ¤íƒ ë¹„ì–´ì ¸ìˆëŠ”ì§€ ì—¬ë¶€ ë°˜í™˜ 
     **/
    public boolean isEmpty(ArrayStack stack) {
       return stack.top == 0;
    }
    
    /**
-     * ½ºÅÃ »óÅÂ Ãâ·Â 
+     * ìŠ¤íƒ ìƒíƒœ ì¶œë ¥ 
     **/
    public void printStackStatus(ArrayStack stack) {
       System.out.println("print stack status...\n");

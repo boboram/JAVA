@@ -1,4 +1,4 @@
-package arrayStack;
+ï»¿package arrayStack;
 
 import arrayStack.arrayStack.ArrayStack;
 
@@ -7,20 +7,20 @@ public class test_arrayStack {
       arrayStack as = new arrayStack();
       ArrayStack stack = null;
       
-      /*½ºÅÃ »ı¼º*/
+      /*ìŠ¤íƒ ìƒì„±*/
       System.out.println("create stack..\n");
-      stack = as.createStack(stack, 10); //10°³ÀÇ µ¥ÀÌÅÍ¸¦ ´ãÀ» ½ºÅÃ »ı¼º
+      stack = as.createStack(stack, 10); //10ê°œì˜ ë°ì´í„°ë¥¼ ë‹´ì„ ìŠ¤íƒ ìƒì„±
       
-      /*µ¥ÀÌÅÍ »ğÀÔ*/
+      /*ë°ì´í„° ì‚½ì…*/
       System.out.println("push data...\n");
       for(int i=0; i<5; i++) {
-         as.Push(stack, i); //½ºÅÃ¿¡ i°ªÀ» Â÷·Ê´ë·Î »ğÀÔ
+         as.Push(stack, i); //ìŠ¤íƒì— iê°’ì„ ì°¨ë¡€ëŒ€ë¡œ ì‚½ì…
       }
       
-      /*ÇöÀç ½ºÅÃ »óÅÂ Ãâ·Â*/
+      /*í˜„ì¬ ìŠ¤íƒ ìƒíƒœ ì¶œë ¥*/
       as.printStackStatus(stack);
       
-      /*µ¥ÀÌÅÍ ¹İÈ¯*/
+      /*ë°ì´í„° ë°˜í™˜*/
       System.out.println("pop data....\n");
       
       for(int i=0; i<10; i++) {
@@ -32,7 +32,7 @@ public class test_arrayStack {
          System.out.println(i + " pop : " + as.Pop(stack));
       }
       
-      /*ÇöÀç ½ºÅÃ »óÅÂ Ãâ·Â*/
+      /*í˜„ì¬ ìŠ¤íƒ ìƒíƒœ ì¶œë ¥*/
       as.printStackStatus(stack);
       
       

@@ -2,50 +2,50 @@ package linkedList;
 
 import linkedList.LinkedList.Node;
 
-public class TestLinkedList { //¿¬°á ¸®½ºÆ® Å×½ºÆ®
+public class TestLinkedList { //ì—°ê²° ë¦¬ìŠ¤íŠ¸ í…ŒìŠ¤íŠ¸
 	public static void main(String args[]) {
 		Node currentNode = null;
 		Node newNode = null;
 		
 		LinkedList nodes = new LinkedList();
 		
-		//³ëµå 5°³ Ãß°¡
+		//ë…¸ë“œ 5ê°œ ì¶”ê°€
 		for (int i = 0; i < 5; i++) {
-			newNode = nodes.createNode(i); //i°ªÀ» °®´Â »õ·Î¿î ³ëµå¸¦ »ı¼º
-			nodes.appendNode(newNode); //»ı¼ºµÈ ³ëµå¸¦ list¿¡ Ãß°¡
+			newNode = nodes.createNode(i); //iê°’ì„ ê°–ëŠ” ìƒˆë¡œìš´ ë…¸ë“œë¥¼ ìƒì„±
+			nodes.appendNode(newNode); //ìƒì„±ëœ ë…¸ë“œë¥¼ listì— ì¶”ê°€
 		}
 
-		//»õ·Î¿î Çìµå ³ëµå 2°³ Ãß°¡ 77¤Á¤Á
+		//ìƒˆë¡œìš´ í—¤ë“œ ë…¸ë“œ 2ê°œ ì¶”ê°€ 77ã…‘ã…‘
 		newNode = nodes.createNode(-1);
-		nodes.insertNewHead(newNode); //list¿¡ -1°ªÀ» °®´Â ³ëµå¸¦ Çìµå ³ëµå·Î Ãß°¡
+		nodes.insertNewHead(newNode); //listì— -1ê°’ì„ ê°–ëŠ” ë…¸ë“œë¥¼ í—¤ë“œ ë…¸ë“œë¡œ ì¶”ê°€
 		
 		newNode = nodes.createNode(-2);
-		nodes.insertNewHead(newNode); //list¿¡ -2°ªÀ» °®´Â ³ëµå¸¦ Çìµå ³ëµå·Î Ãß°¡
+		nodes.insertNewHead(newNode); //listì— -2ê°’ì„ ê°–ëŠ” ë…¸ë“œë¥¼ í—¤ë“œ ë…¸ë“œë¡œ ì¶”ê°€
 		
-		//¸®½ºÆ® Ãâ·Â
+		//ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 		nodes.printfNodeList();
 
-		//¸®½ºÆ® ¼¼¹øÂ° ³ëµå¿¡ »õ·Î¿î ³ëµå¸¦ »ğÀÔ
+		//ë¦¬ìŠ¤íŠ¸ ì„¸ë²ˆì§¸ ë…¸ë“œì— ìƒˆë¡œìš´ ë…¸ë“œë¥¼ ì‚½ì…
 		System.out.println("insert newNode after third node...");
-		currentNode = nodes.getNodeAt(2); //¼¼¹øÂ°¿¡ ÀÖ´Â ³ëµå ¹İÈ¯
-		newNode = nodes.createNode(3000); //3000°ªÀ» °®´Â »õ·Î¿î ³ëµå¸¦ »ı¼º
-		nodes.insertAfter(currentNode, newNode); //¼¼¹øÂ° ³ëµå µÚ¿¡ newNode¸¦ »ğÀÔ
+		currentNode = nodes.getNodeAt(2); //ì„¸ë²ˆì§¸ì— ìˆëŠ” ë…¸ë“œ ë°˜í™˜
+		newNode = nodes.createNode(3000); //3000ê°’ì„ ê°–ëŠ” ìƒˆë¡œìš´ ë…¸ë“œë¥¼ ìƒì„±
+		nodes.insertAfter(currentNode, newNode); //ì„¸ë²ˆì§¸ ë…¸ë“œ ë’¤ì— newNodeë¥¼ ì‚½ì…
 		
-		//¸®½ºÆ® Ãâ·Â
+		//ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 		nodes.printfNodeList();
 
-		//¸ğµç ³ëµå Á¦°Å
+		//ëª¨ë“  ë…¸ë“œ ì œê±°
 		System.out.println("destroy all nodes..");
 		
-		int count = nodes.getNodeCount(); //list¿¡ ´ã±ä ³ëµå °³¼ö
+		int count = nodes.getNodeCount(); //listì— ë‹´ê¸´ ë…¸ë“œ ê°œìˆ˜
 
 		currentNode = nodes.getNodeAt(0);
 		Node nextNode = null;
 		for (int i = 0; i < count; i++) {
 			nextNode = currentNode.nextNode;
 			if (currentNode != null) {
-				nodes.removeNode(currentNode); //list¿¡¼­ »èÁ¦
-//				destoryNode(currentNode); //ÇØ´ç ³ëµå ¸Ş¸ğ¸® ÇØÁ¦ ==> gc°¡ ÀÖÀ¸´Ï »ı·«!
+				nodes.removeNode(currentNode); //listì—ì„œ ì‚­ì œ
+//				destoryNode(currentNode); //í•´ë‹¹ ë…¸ë“œ ë©”ëª¨ë¦¬ í•´ì œ ==> gcê°€ ìˆìœ¼ë‹ˆ ìƒëµ!
 			}
 			currentNode = nextNode;
 		}

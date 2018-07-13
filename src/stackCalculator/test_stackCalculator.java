@@ -7,20 +7,20 @@ public class test_stackCalculator {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		String infixExpression = ""; //»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ÁßÀ§ Ç¥±â½ÄÀÌ ÀúÀåµÉ º¯¼ö
-		String postfixExpression = ""; //»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ÁßÀ§ Ç¥±â½ÄÀÌ ÈÄÀ§ Ç¥±â½ÄÀ¸·Î º¯°æµÇ¾î ÀúÀåµÉ º¯¼ö
+		String infixExpression = ""; //ì‚¬ìš©ìê°€ ì…ë ¥í•œ ì¤‘ìœ„ í‘œê¸°ì‹ì´ ì €ì¥ë  ë³€ìˆ˜
+		String postfixExpression = ""; //ì‚¬ìš©ìê°€ ì…ë ¥í•œ ì¤‘ìœ„ í‘œê¸°ì‹ì´ í›„ìœ„ í‘œê¸°ì‹ìœ¼ë¡œ ë³€ê²½ë˜ì–´ ì €ì¥ë  ë³€ìˆ˜
 		stackCalculator calc = new stackCalculator();
 		
-		/*ÁßÀ§ Ç¥±â½Ä ÀÔ·Â*/
+		/*ì¤‘ìœ„ í‘œê¸°ì‹ ì…ë ¥*/
 		System.out.print("Enter infix expression : ");
 		infixExpression = sc.nextLine();
 		
-		/*ÈÄÀ§ Ç¥±â½ÄÀ¸·Î ÀüÈ¯*/
+		/*í›„ìœ„ í‘œê¸°ì‹ìœ¼ë¡œ ì „í™˜*/
 		postfixExpression = calc.getPostfix(infixExpression, postfixExpression);
 		
 		System.out.println("postfixExpression : " + postfixExpression);
 		
-		/*ÈÄÀ§ Ç¥±â½ÄÀ¸·Î ÀüÈ¯µÈ ½ÄÀ» °è»ê*/
+		/*í›„ìœ„ í‘œê¸°ì‹ìœ¼ë¡œ ì „í™˜ëœ ì‹ì„ ê³„ì‚°*/
 		System.out.println("result : " + calc.calculate(postfixExpression));
 	}
 
