@@ -1,7 +1,7 @@
 package arrayStack;
 
 
-public class arrayStack {
+public class arrayStack { 
    
    public class Node {
       int data = 0;
