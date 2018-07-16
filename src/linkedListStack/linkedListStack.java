@@ -44,7 +44,7 @@ public class linkedListStack {
 		if(stack.headNode == null) { //첫 노드라면 헤드노드는 newNode다.
 			stack.headNode = newNode;
 		}else {
-			stack.topNode.nextNode = newNode; //스택의 최상단 노드의 다음노드도 newNode
+			stack.topNode.nextNode = newNode; //노드를 추가하기 전의 최상단 노드의 다음노드를 newNode 지정
         }
 		
 		stack.topNode = newNode; //스택의 최상단 노드는 newNode가 된다.
