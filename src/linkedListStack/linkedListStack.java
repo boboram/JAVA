@@ -43,7 +43,7 @@ public class linkedListStack {
 	public void Push(LinkedListStack stack, Node newNode) {
 		if(stack.headNode == null) { //첫 노드라면 헤드노드는 newNode다.
 			stack.headNode = newNode;
-		}else {
+		}else { 
 			stack.topNode.nextNode = newNode; //노드를 추가하기 전의 최상단 노드의 다음노드를 newNode 지정
         }
 		
